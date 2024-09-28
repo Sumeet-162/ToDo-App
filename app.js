@@ -3,8 +3,9 @@ document.addEventListener("DOMContentLoaded",()=>{
 
   if(storedTask){
     storedTask.forEach((task)=> tasks.push(task))
-  }updateTaskList();
-  updateStats();
+    updateTaskList();
+    updateStats();
+  }
 })
 
 let tasks = [];
