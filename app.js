@@ -136,3 +136,16 @@ fire(0.1, {
   startVelocity: 45,
 });
 }
+
+// switch
+
+const checkbox1 = document.querySelector('.checkbox1');
+
+checkbox1.addEventListener('change', () => {
+  document.body.classList.toggle('dark-mode');
+
+  const container = document.querySelector('.container');
+  if (container) {
+    container.classList.toggle('dark-mode');
+  }
+});
