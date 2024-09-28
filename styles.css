@@ -271,3 +271,74 @@ button{
     font-size: 14px;
   }
 }
+
+.toggle-switch {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 100px;
+  height: 50px;
+  --light: #d8dbe0;
+  --dark: #28292c;
+  --link: rgb(27, 129, 112);
+  --link-hover: rgb(24, 94, 82);
+}
+
+.switch-label {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  background-color: var(--dark);
+  border-radius: 25px;
+  cursor: pointer;
+  border: 3px solid var(--dark);
+}
+
+.checkbox1 {
+  position: absolute;
+  opacity: 0; /* Make the checkbox invisible but still interactable */
+  width: 100%; /* Match the width of the slider */
+  height: 100%; /* Match the height of the slider */
+  cursor: pointer; /* Ensure the cursor indicates it's clickable */
+}
+
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  transition: 0.3s;
+}
+
+.checkbox1:checked ~ .slider {
+  background-color: var(--light);
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  box-shadow: inset 12px -4px 0px 0px var(--light);
+  background-color: var(--dark);
+  transition: 0.3s;
+}
+
+.checkbox1:checked ~ .slider::before {
+  transform: translateX(50px);
+  background-color: var(--dark);
+  box-shadow: none;
+}
+
+
+body.dark-mode {
+  background-color: var(--background-dark);
+  color: var(--light);
+}
+
+.container.dark-mode {
+  background-color: var(--secondary-background-dark);
+}
